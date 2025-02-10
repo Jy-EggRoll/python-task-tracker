@@ -61,7 +61,7 @@
  [],
  False,
  False,
- 1739155294,
+ 1739155699,
  [('run.exe',
    'c:\\Users\\JyEgg\\Desktop\\Git\\python-task-tracker\\.venv\\Lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit-intel\\run.exe',
    'EXECUTABLE')],
