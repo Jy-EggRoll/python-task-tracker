@@ -18,7 +18,7 @@ def arg_handling():
     update_parser.add_argument("new_name", help="New task name or description")
 
     delete_parser = subparsers.add_parser("delete", help="Delete an existing task by ID")
-    delete_parser.add_argument("task_id", type=int, help="Task ID to delete")
+    delete_parser.add_argument("task_id", type=lambda x: "all" if x == "all" else int(x), help="Task ID to delete")
 
     mark_in_progress_parser = subparsers.add_parser("mark-in-progress", help="Mark a task as in progress by ID")
     mark_in_progress_parser.add_argument("task_id", type=int, help="Task ID to mark as in progress")
@@ -27,7 +27,7 @@ def arg_handling():
     mark_done_parser.add_argument("task_id", type=int, help="Task ID to mark as done")
 
     list_parser = subparsers.add_parser("list", help="List tasks")
-    list_parser.add_argument("status", nargs="?", default=None, choices=["done", "todo", "in-progress"], help="List specific tasks by choice (This is an optional arg)")
+    list_parser.add_argument("option", nargs="?", default="all", choices=["done", "todo", "in-progress", "all"], help="List specific tasks by choice (This is an optional arg)")
 
     args = parser.parse_args()
 
